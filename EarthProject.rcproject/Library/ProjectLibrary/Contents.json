@@ -1,0 +1,27 @@
+[
+  {
+    "libraryIdentifier" : "efab00f40a01553498d18becf4533708",
+    "format" : "model",
+    "displayName" : "Earth_1_12756.usdz"
+  },
+  {
+    "libraryIdentifier" : "ee1ddd83793e5f67ff8cc789fb83af22",
+    "format" : "model",
+    "displayName" : "Moon_1_3474.usdz"
+  },
+  {
+    "libraryIdentifier" : "664b873fbffb5b711667c414da163812",
+    "format" : "model",
+    "displayName" : "Earth.usdz"
+  },
+  {
+    "libraryIdentifier" : "0409014f4e330ca92a96896bf48d298c",
+    "format" : "model",
+    "displayName" : "Moon.usdz"
+  },
+  {
+    "libraryIdentifier" : "b4c4591da591339db4805917952198cc",
+    "format" : "model",
+    "displayName" : "Sun.usdz"
+  }
+]
