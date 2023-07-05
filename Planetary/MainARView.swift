@@ -19,7 +19,7 @@ struct MainARView: View {
                 isPresentingDetailView = true
                 selectedEntity = entity
             }
-            .edgesIgnoringSafeArea(.all)
+            .ignoresSafeArea()
             .navigationDestination(isPresented: $isPresentingDetailView) {
                 if let selectedEntity {
                     DetailView(spaceObject: getSpaceObject(entity: selectedEntity))
@@ -42,33 +42,17 @@ struct MainARView: View {
     }
 }
 
-struct ARViewContainer: UIViewRepresentable {
+struct ARViewContainer: UIViewControllerRepresentable {
+    typealias UIViewControllerType = MainARViewController
     
     let completionHandler: ((Entity?) -> Void)
     
-    func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-        let anchor: EarthProject.Earth = try! EarthProject.loadEarth()
-        anchor.generateCollisionShapes(recursive: true)
-        arView.scene.anchors.append(anchor)
-        anchor.actions.earthTapped.onAction = { entity in
-            completionHandler(entity)
-        }
-        anchor.actions.moonTapped.onAction = { entity in
-            completionHandler(entity)
-        }
-        anchor.actions.sunTapped.onAction = { entity in
-            completionHandler(entity)
-        }
-
-
-        return arView
-        
+    func makeUIViewController(context: Context) -> MainARViewController {
+        return MainARViewController(completionHandler: completionHandler)
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
+    func updateUIViewController(_ uiViewController: MainARViewController, context: Context) {
+    }
 }
 
 struct MainARView_Previews: PreviewProvider {

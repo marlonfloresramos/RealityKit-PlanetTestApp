@@ -18,6 +18,7 @@ struct DetailView: View {
     
     let spaceObject: SpaceObject
     var scene: SCNScene?
+    @State private var orientation = UIDevice.current.orientation
     
     init(spaceObject: SpaceObject) {
         self.spaceObject = spaceObject
@@ -29,21 +30,41 @@ struct DetailView: View {
         ZStack {
             Color(.black)
                 .ignoresSafeArea()
-            VStack {
-                Text(spaceObject.name)
-                    .foregroundColor(.white)
-                    .font(.title)
-                SceneView(scene: scene, options: [.allowsCameraControl, .autoenablesDefaultLighting])
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2)
-                Text(spaceObject.description)
-                    .foregroundColor(.white)
-                    .font(.system(size: 18))
-                Spacer()
+            Group {
+                if orientation.isPortrait {
+                    VStack {
+                        Text(spaceObject.name)
+                            .foregroundColor(.white)
+                            .font(.title)
+                        SceneView(scene: scene, options: [.allowsCameraControl, .autoenablesDefaultLighting])
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2)
+                        Text(spaceObject.description)
+                            .foregroundColor(.white)
+                            .font(.system(size: 18))
+                        Spacer()
+                    }
+                } else {
+                    VStack {
+                        Text(spaceObject.name)
+                            .foregroundColor(.white)
+                            .font(.title)
+                        HStack {
+                            SceneView(scene: scene, options: [.allowsCameraControl, .autoenablesDefaultLighting])
+                                .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height*0.8)
+                            Text(spaceObject.description)
+                                .foregroundColor(.white)
+                                .font(.system(size: 18))
+                        }
+                    }
+                }
             }
             .padding()
             .onAppear {
                 rotateObject()
+            }
         }
+        .onRotate { newOrientation in
+            orientation = newOrientation
         }
     }
     

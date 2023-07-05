@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6B51B9472A544C29009BD69E /* Sun.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6B51B9462A544C29009BD69E /* Sun.usdz */; };
+		6B51B9492A54B2D8009BD69E /* MainARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B51B9482A54B2D8009BD69E /* MainARViewController.swift */; };
+		6B51B96B2A562478009BD69E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B51B96A2A562478009BD69E /* Helpers.swift */; };
 		6B5F2B132A51B91000A64EE1 /* PlanetaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F2B122A51B91000A64EE1 /* PlanetaryApp.swift */; };
 		6B5F2B152A51B91000A64EE1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F2B142A51B91000A64EE1 /* DetailView.swift */; };
 		6B5F2B172A51B91100A64EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B5F2B162A51B91100A64EE1 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		6B51B9462A544C29009BD69E /* Sun.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sun.usdz; sourceTree = "<group>"; };
+		6B51B9482A54B2D8009BD69E /* MainARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainARViewController.swift; sourceTree = "<group>"; };
+		6B51B96A2A562478009BD69E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		6B5F2B0F2A51B91000A64EE1 /* Planetary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planetary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5F2B122A51B91000A64EE1 /* PlanetaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetaryApp.swift; sourceTree = "<group>"; };
 		6B5F2B142A51B91000A64EE1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				6B5F2B142A51B91000A64EE1 /* DetailView.swift */,
 				6B5F2B162A51B91100A64EE1 /* Assets.xcassets */,
 				6B5F2B182A51B91100A64EE1 /* Preview Content */,
+				6B51B9482A54B2D8009BD69E /* MainARViewController.swift */,
+				6B51B96A2A562478009BD69E /* Helpers.swift */,
 			);
 			path = Planetary;
 			sourceTree = "<group>";
@@ -156,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B5F2B152A51B91000A64EE1 /* DetailView.swift in Sources */,
+				6B51B96B2A562478009BD69E /* Helpers.swift in Sources */,
+				6B51B9492A54B2D8009BD69E /* MainARViewController.swift in Sources */,
 				6B5F2B462A52259E00A64EE1 /* MainARView.swift in Sources */,
 				6B5F2B132A51B91000A64EE1 /* PlanetaryApp.swift in Sources */,
 				6B5F2B482A5225D600A64EE1 /* EarthProject.rcproject in Sources */,
@@ -303,9 +311,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Marlon-Flores.Planetary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -333,9 +344,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Marlon-Flores.Planetary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
